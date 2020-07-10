@@ -1,0 +1,21 @@
+const { gql } = require('apollo-server-lambda');
+
+
+const schema = gql`
+  type Comment {
+    Id: ID,
+    text: String
+  }
+
+  type Query {
+    comments: [Comment]
+    helloWorld: String
+  }
+
+  type Mutation {
+    createComment(text: String): Comment
+  }
+`
+module.exports = {
+  schema
+};
